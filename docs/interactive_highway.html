@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f6fbd5cd2e2e4f15a416ec481d337e71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_f6fbd5cd2e2e4f15a416ec481d337e71" ></div>
+        
+</body>
+<script>    
+    
+            var map_f6fbd5cd2e2e4f15a416ec481d337e71 = L.map(
+                "map_f6fbd5cd2e2e4f15a416ec481d337e71",
+                {
+                    center: [43.9511982, -79.0168722],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_f6fbd5cd2e2e4f15a416ec481d337e71);
+
+            
+
+        
+    
+            var tile_layer_f99ae475d0c948189d982d741a83a0e2 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f6fbd5cd2e2e4f15a416ec481d337e71);
+        
+    
+        function geo_json_f3f41878338c428986b984f24b61b906_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.2, "weight": 2};
+            }
+        }
+        function geo_json_f3f41878338c428986b984f24b61b906_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "weight": 3};
+            }
+        }
+        function geo_json_f3f41878338c428986b984f24b61b906_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    geo_json_f3f41878338c428986b984f24b61b906.resetStyle(e.target);
+                },
+                mouseover: function(e) {
+                    e.target.setStyle(geo_json_f3f41878338c428986b984f24b61b906_highlighter(e.target.feature));
+                },
+                click: function(e) {
+                    map_f6fbd5cd2e2e4f15a416ec481d337e71.fitBounds(e.target.getBounds());
+                }
+            });
+        };
+        var geo_json_f3f41878338c428986b984f24b61b906 = L.geoJson(null, {
+                smoothFactor: 2.0,
+                onEachFeature: geo_json_f3f41878338c428986b984f24b61b906_onEachFeature,
+            
+                style: geo_json_f3f41878338c428986b984f24b61b906_styler,
+        }).addTo(map_f6fbd5cd2e2e4f15a416ec481d337e71);
+
+        function geo_json_f3f41878338c428986b984f24b61b906_add (data) {
+            geo_json_f3f41878338c428986b984f24b61b906.addData(data);
+        }
+            geo_json_f3f41878338c428986b984f24b61b906_add({"bbox": [-79.09796784445065, 43.8647786337291, -78.61199825090202, 44.02095372975222], "features": [{"bbox": [-79.09796784445065, 43.918414552499165, -79.02113228867432, 43.94966483545519], "geometry": {"coordinates": [[-79.09796784445065, 43.918414552499165], [-79.09796461773541, 43.91841904183901], [-79.08659761350607, 43.92962442989446], [-79.0851322935296, 43.930831163992735], [-79.082244751223, 43.93246887455469], [-79.07203060903397, 43.93725271330144], [-79.06953094554466, 43.938243959167885], [-79.02113228867432, 43.94966483545519]], "type": "LineString"}, "id": "0", "properties": {"AADT18": 1000, "AADT19": 1050, "Highway": 407, "Name": "Brock-LakeRidge", "SEGID": "407001", "id": 1}, "type": "Feature"}, {"bbox": [-79.02113228867431, 43.949664835455195, -79.00923733827698, 43.95095776484621], "geometry": {"coordinates": [[-79.02113228867431, 43.949664835455195], [-79.01587437581752, 43.95061298367527], [-79.00923733827698, 43.95095776484621]], "type": "LineString"}, "id": "1", "properties": {"AADT18": 1500, "AADT19": 1575, "Highway": 407, "Name": "LakeRidge-Hwy412", "SEGID": "407002", "id": 2}, "type": "Feature"}, {"bbox": [-79.009237338277, 43.947725441368654, -78.95997672847932, 43.95156113189533], "geometry": {"coordinates": [[-79.009237338277, 43.950957764846194], [-78.99023127622908, 43.95143183895623], [-78.98618009747057, 43.95156113189533], [-78.98299087163939, 43.95130254601713], [-78.97876730229541, 43.95044059308979], [-78.97312151062131, 43.949104566052405], [-78.96700164483717, 43.94798402724686], [-78.95997672847932, 43.947725441368654]], "type": "LineString"}, "id": "2", "properties": {"AADT18": 2000, "AADT19": 2100, "Highway": 407, "Name": "Hwy412-Baldwin", "SEGID": "407003", "id": 3}, "type": "Feature"}, {"bbox": [-78.95997672847932, 43.947682343722285, -78.94066898290683, 43.951000862492556], "geometry": {"coordinates": [[-78.95997672847932, 43.947682343722285], [-78.95627033089174, 43.94794092960049], [-78.9500211721685, 43.948802882527836], [-78.9448925522508, 43.94970793310154], [-78.94066898290683, 43.951000862492556]], "type": "LineString"}, "id": "3", "properties": {"AADT18": 2500, "AADT19": 2625, "Highway": 407, "Name": "Baldwin-Thickson", "SEGID": "407004", "id": 4}, "type": "Feature"}, {"bbox": [-78.94063665967204, 43.95100086249255, -78.90622318904785, 43.97091197511418], "geometry": {"coordinates": [[-78.94063665967204, 43.95100086249255], [-78.93846022853049, 43.95201365718218], [-78.92458278640024, 43.96048234469333], [-78.91566157360224, 43.96595574578196], [-78.90971409840358, 43.969317362198595], [-78.90622318904785, 43.97091197511418]], "type": "LineString"}, "id": "4", "properties": {"AADT18": 3000, "AADT19": 3150, "Highway": 407, "Name": "Thickson-Simcoe", "SEGID": "407005", "id": 5}, "type": "Feature"}, {"bbox": [-78.90629052912024, 43.97082577982144, -78.86849389325623, 43.98226820493189], "geometry": {"coordinates": [[-78.90629052912024, 43.97082577982144], [-78.9004292492143, 43.97331466889913], [-78.88051813659268, 43.97940221144847], [-78.87267436495385, 43.98177258199867], [-78.87006695734863, 43.982203558462345], [-78.86849389325623, 43.98226820493189]], "type": "LineString"}, "id": "5", "properties": {"AADT18": 3500, "AADT19": 3675, "Highway": 407, "Name": "Simcoe-Harmony", "SEGID": "407006", "id": 6}, "type": "Feature"}, {"bbox": [-78.86849389325617, 43.96423183992723, -78.81197133004568, 43.98224665610871], "geometry": {"coordinates": [[-78.86849389325617, 43.98224665610871], [-78.8664898527001, 43.98222510728553], [-78.86448581214403, 43.98205271670006], [-78.86105954925783, 43.98125541024226], [-78.82048311520319, 43.965223085793674], [-78.8186299164094, 43.964662816390906], [-78.81660432703015, 43.964382681689514], [-78.81460028647408, 43.96423183992723], [-78.81197133004568, 43.9642749375736]], "type": "LineString"}, "id": "6", "properties": {"AADT18": 4000, "AADT19": 4200, "Highway": 407, "Name": "Harmony-Enfield", "SEGID": "407007", "id": 7}, "type": "Feature"}, {"bbox": [-78.81190668357613, 43.96431803521998, -78.77181509804308, 43.969920729247725], "geometry": {"coordinates": [[-78.81190668357613, 43.96431803521998], [-78.81085079124013, 43.964382681689536], [-78.80330870312586, 43.9658695504892], [-78.80035651434972, 43.966235880483325], [-78.79688715381717, 43.9663867222456], [-78.78617738869492, 43.9661281363674], [-78.78393631108385, 43.9662574293065], [-78.78137200112499, 43.96658066165426], [-78.77841981234884, 43.967248675172954], [-78.77698681560715, 43.96767965163663], [-78.77561846533499, 43.96816450015826], [-78.77181509804308, 43.969920729247725]], "type": "LineString"}, "id": "7", "properties": {"AADT18": 4500, "AADT19": 4725, "Highway": 407, "Name": "Enfield-Hwy418", "SEGID": "407008", "id": 8}, "type": "Feature"}, {"bbox": [-78.77180432363153, 43.96992072924772, -78.74353226761467, 43.98152477053207], "geometry": {"coordinates": [[-78.77180432363153, 43.96992072924772], [-78.75889657854458, 43.9768917735476], [-78.75359556804139, 43.979132851158695], [-78.74988917045381, 43.980188743494686], [-78.74353226761467, 43.98152477053207]], "type": "LineString"}, "id": "8", "properties": {"AADT18": 5000, "AADT19": 5250, "Highway": 407, "Name": "Hwy418-RR57", "SEGID": "407009", "id": 9}, "type": "Feature"}, {"bbox": [-78.74355381643785, 43.9815139961205, -78.66658142002609, 44.000816354487185], "geometry": {"coordinates": [[-78.74355381643785, 43.9815139961205], [-78.73549455656722, 43.98224126890293], [-78.73191745191873, 43.98258605007387], [-78.71103664225384, 43.9855597876732], [-78.70444270235966, 43.98665877765557], [-78.69989590066793, 43.987606925875646], [-78.69774101834955, 43.98814564645524], [-78.69433630428654, 43.989158441144866], [-78.69185818962043, 43.99008504054175], [-78.66658142002609, 44.000816354487185]], "type": "LineString"}, "id": "9", "properties": {"AADT18": 5500, "AADT19": 5775, "Highway": 407, "Name": "RR57-DCTownline", "SEGID": "407010", "id": 10}, "type": "Feature"}, {"bbox": [-78.66662451767242, 44.00081635448718, -78.61199825090202, 44.02095372975222], "geometry": {"coordinates": [[-78.66662451767242, 44.00081635448718], [-78.63494774759255, 44.01447830838557], [-78.62796592888105, 44.017452045984896], [-78.62342451439514, 44.0187503625817], [-78.61895852079031, 44.019768544477124], [-78.61199825090202, 44.02095372975222]], "type": "LineString"}, "id": "10", "properties": {"AADT18": 6000, "AADT19": 6300, "Highway": 407, "Name": "DCTownline-Hwy35/115", "SEGID": "407011", "id": 11}, "type": "Feature"}, {"bbox": [-79.00917179393953, 43.94255192806919, -79.00693071632844, 43.950941603228664], "geometry": {"coordinates": [[-79.00917179393953, 43.950941603228664], [-79.00693071632844, 43.94255192806919]], "type": "LineString"}, "id": "11", "properties": {"AADT18": 6500, "AADT19": 6825, "Highway": 407, "Name": "Hwy412-Hwy7/412", "SEGID": "407012", "id": 12}, "type": "Feature"}, {"bbox": [-78.77173249422071, 43.959043960745696, -78.76661824018515, 43.969904567630216], "geometry": {"coordinates": [[-78.77173249422071, 43.969904567630216], [-78.76903170838172, 43.96547987593652], [-78.76661824018515, 43.959043960745696]], "type": "LineString"}, "id": "12", "properties": {"AADT18": 7000, "AADT19": 7350, "Highway": 407, "Name": "Hwy418-Taunton418", "SEGID": "407013", "id": 13}, "type": "Feature"}, {"bbox": [-79.00693071632845, 43.90614159983, -78.99632869532212, 43.94252319630495], "geometry": {"coordinates": [[-79.00693071632845, 43.94252319630495], [-78.99913004233599, 43.92423542836315], [-78.9976503564774, 43.92082353135908], [-78.9973343070707, 43.918927234918925], [-78.99730557530646, 43.917289524356974], [-78.99782274706286, 43.911658098565], [-78.99767908824163, 43.910307705645494], [-78.99632869532212, 43.90614159983]], "type": "LineString"}, "id": "13", "properties": {"AADT18": 7500, "AADT19": 7875, "Highway": 412, "Name": "Hwy7/412-Taunton412", "SEGID": "412001", "id": 14}, "type": "Feature"}, {"bbox": [-78.99628559767577, 43.872263258314874, -78.97627033240876, 43.90615596571213], "geometry": {"coordinates": [[-78.99628559767577, 43.90615596571213], [-78.98849210662438, 43.88688413484495], [-78.98755832428643, 43.885591205453935], [-78.98564766196414, 43.8834506890177], [-78.98018862675764, 43.87876741144579], [-78.97941646059355, 43.87793778175322], [-78.9782815559059, 43.87644373001249], [-78.97627033240876, 43.872263258314874]], "type": "LineString"}, "id": "14", "properties": {"AADT18": 8000, "AADT19": 8400, "Highway": 412, "Name": "Taunton412-Dundas412", "SEGID": "412002", "id": 15}, "type": "Feature"}, {"bbox": [-78.97622723476238, 43.8647786337291, -78.97341152186638, 43.87227762419699], "geometry": {"coordinates": [[-78.97622723476238, 43.87227762419699], [-78.97490557360712, 43.86936135012614], [-78.97341152186638, 43.8647786337291]], "type": "LineString"}, "id": "15", "properties": {"AADT18": 8500, "AADT19": 8925, "Highway": 412, "Name": "Dundas412-Hwy401/412", "SEGID": "412003", "id": 16}, "type": "Feature"}, {"bbox": [-78.76662901459673, 43.91369446235582, -78.7613567358578, 43.95901882045197], "geometry": {"coordinates": [[-78.76662901459673, 43.95901882045197], [-78.76555157343755, 43.955298056982265], [-78.76520679226661, 43.95156292763045], [-78.76509186520963, 43.947655407693155], [-78.76474708403869, 43.945845306545735], [-78.76207502996392, 43.939782904290084], [-78.76144293115054, 43.93736943609352], [-78.7613567358578, 43.93535821259639], [-78.76184517584997, 43.93282981734285], [-78.76532171932358, 43.92553194922468], [-78.76618367225093, 43.923175944556604], [-78.7662985993079, 43.921940478694076], [-78.76626986754366, 43.91961320579025], [-78.76592508637272, 43.917918031699806], [-78.76537918285207, 43.916280321137855], [-78.76391386287558, 43.91369446235582]], "type": "LineString"}, "id": "16", "properties": {"AADT18": 9000, "AADT19": 9450, "Highway": 418, "Name": "Taunton418-Hwy2/418", "SEGID": "418001", "id": 17}, "type": "Feature"}, {"bbox": [-78.7639497775809, 43.88109109287907, -78.74583440022458, 43.913651364709445], "geometry": {"coordinates": [[-78.7639497775809, 43.913651364709445], [-78.7587134135473, 43.9058147760117], [-78.75489208890275, 43.89782734555165], [-78.74791027019128, 43.88570254104035], [-78.74583440022458, 43.88109109287907]], "type": "LineString"}, "id": "17", "properties": {"AADT18": 9500, "AADT19": 9975, "Highway": 418, "Name": "Hwy2/418-Hwy401/418", "SEGID": "418002", "id": 18}, "type": "Feature"}], "type": "FeatureCollection"});
+        
+    
+    geo_json_f3f41878338c428986b984f24b61b906.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "AADT18"];
+    let aliases = ["Segment Name", "AADT18"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_6523d5878e714d30a7fa26b248b0be05_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.2, "weight": 10};
+            }
+        }
+        function geo_json_6523d5878e714d30a7fa26b248b0be05_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "weight": 3};
+            }
+        }
+        function geo_json_6523d5878e714d30a7fa26b248b0be05_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    geo_json_6523d5878e714d30a7fa26b248b0be05.resetStyle(e.target);
+                },
+                mouseover: function(e) {
+                    e.target.setStyle(geo_json_6523d5878e714d30a7fa26b248b0be05_highlighter(e.target.feature));
+                },
+                click: function(e) {
+                    map_f6fbd5cd2e2e4f15a416ec481d337e71.fitBounds(e.target.getBounds());
+                }
+            });
+        };
+        var geo_json_6523d5878e714d30a7fa26b248b0be05 = L.geoJson(null, {
+                smoothFactor: 2.0,
+                onEachFeature: geo_json_6523d5878e714d30a7fa26b248b0be05_onEachFeature,
+            
+                style: geo_json_6523d5878e714d30a7fa26b248b0be05_styler,
+        }).addTo(map_f6fbd5cd2e2e4f15a416ec481d337e71);
+
+        function geo_json_6523d5878e714d30a7fa26b248b0be05_add (data) {
+            geo_json_6523d5878e714d30a7fa26b248b0be05.addData(data);
+        }
+            geo_json_6523d5878e714d30a7fa26b248b0be05_add({"bbox": [-79.09796779, 43.86478, -78.6119852, 44.02095471], "features": [{"bbox": [-79.09796779, 43.91841469, -79.09796779, 43.91841469], "geometry": {"coordinates": [-79.09796779, 43.91841469], "type": "Point"}, "id": "0", "properties": {"Highway": 407, "Interchang": "Brock407", "Latitude": 43.91841469, "Longitude": -79.09796779}, "type": "Feature"}, {"bbox": [-79.02113, 43.94967, -79.02113, 43.94967], "geometry": {"coordinates": [-79.02113, 43.94967], "type": "Point"}, "id": "1", "properties": {"Highway": 407, "Interchang": "LakeRidge", "Latitude": 43.94967, "Longitude": -79.02113}, "type": "Feature"}, {"bbox": [-79.00922132, 43.95096698, -79.00922132, 43.95096698], "geometry": {"coordinates": [-79.00922132, 43.95096698], "type": "Point"}, "id": "2", "properties": {"Highway": 407, "Interchang": "Hwy412", "Latitude": 43.95096698, "Longitude": -79.00922132}, "type": "Feature"}, {"bbox": [-78.95998, 43.94769, -78.95998, 43.94769], "geometry": {"coordinates": [-78.95998, 43.94769], "type": "Point"}, "id": "3", "properties": {"Highway": 407, "Interchang": "Baldwin", "Latitude": 43.94769, "Longitude": -78.95998}, "type": "Feature"}, {"bbox": [-78.94069, 43.951, -78.94069, 43.951], "geometry": {"coordinates": [-78.94069, 43.951], "type": "Point"}, "id": "4", "properties": {"Highway": 407, "Interchang": "Thickson", "Latitude": 43.951, "Longitude": -78.94069}, "type": "Feature"}, {"bbox": [-78.90629, 43.97083, -78.90629, 43.97083], "geometry": {"coordinates": [-78.90629, 43.97083], "type": "Point"}, "id": "5", "properties": {"Highway": 407, "Interchang": "Simcoe", "Latitude": 43.97083, "Longitude": -78.90629}, "type": "Feature"}, {"bbox": [-78.86849, 43.98205, -78.86849, 43.98205], "geometry": {"coordinates": [-78.86849, 43.98205], "type": "Point"}, "id": "6", "properties": {"Highway": 407, "Interchang": "Harmony", "Latitude": 43.98205, "Longitude": -78.86849}, "type": "Feature"}, {"bbox": [-78.81196056, 43.96428276, -78.81196056, 43.96428276], "geometry": {"coordinates": [-78.81196056, 43.96428276], "type": "Point"}, "id": "7", "properties": {"Highway": 407, "Interchang": "Enfield", "Latitude": 43.96428276, "Longitude": -78.81196056}, "type": "Feature"}, {"bbox": [-78.77181044, 43.96991195, -78.77181044, 43.96991195], "geometry": {"coordinates": [-78.77181044, 43.96991195], "type": "Point"}, "id": "8", "properties": {"Highway": 407, "Interchang": "Hwy418", "Latitude": 43.96991195, "Longitude": -78.77181044}, "type": "Feature"}, {"bbox": [-78.74354975, 43.98151764, -78.74354975, 43.98151764], "geometry": {"coordinates": [-78.74354975, 43.98151764], "type": "Point"}, "id": "9", "properties": {"Highway": 407, "Interchang": "RR57", "Latitude": 43.98151764, "Longitude": -78.74354975}, "type": "Feature"}, {"bbox": [-78.66667034, 44.00083072, -78.66667034, 44.00083072], "geometry": {"coordinates": [-78.66667034, 44.00083072], "type": "Point"}, "id": "10", "properties": {"Highway": 407, "Interchang": "DC_Townline", "Latitude": 44.00083072, "Longitude": -78.66667034}, "type": "Feature"}, {"bbox": [-78.6119852, 44.02095471, -78.6119852, 44.02095471], "geometry": {"coordinates": [-78.6119852, 44.02095471], "type": "Point"}, "id": "11", "properties": {"Highway": 407, "Interchang": "Hwy35/115", "Latitude": 44.02095471, "Longitude": -78.6119852}, "type": "Feature"}, {"bbox": [-79.00697, 43.94255, -79.00697, 43.94255], "geometry": {"coordinates": [-79.00697, 43.94255], "type": "Point"}, "id": "12", "properties": {"Highway": 412, "Interchang": "Hwy7/412", "Latitude": 43.94255, "Longitude": -79.00697}, "type": "Feature"}, {"bbox": [-78.99627, 43.90616, -78.99627, 43.90616], "geometry": {"coordinates": [-78.99627, 43.90616], "type": "Point"}, "id": "13", "properties": {"Highway": 412, "Interchang": "Taunton412", "Latitude": 43.90616, "Longitude": -78.99627}, "type": "Feature"}, {"bbox": [-78.97623, 43.87227, -78.97623, 43.87227], "geometry": {"coordinates": [-78.97623, 43.87227], "type": "Point"}, "id": "14", "properties": {"Highway": 412, "Interchang": "Dundas412", "Latitude": 43.87227, "Longitude": -78.97623}, "type": "Feature"}, {"bbox": [-78.97341, 43.86478, -78.97341, 43.86478], "geometry": {"coordinates": [-78.97341, 43.86478], "type": "Point"}, "id": "15", "properties": {"Highway": 412, "Interchang": "Hwy401/412", "Latitude": 43.86478, "Longitude": -78.97341}, "type": "Feature"}, {"bbox": [-78.76663322, 43.95901787, -78.76663322, 43.95901787], "geometry": {"coordinates": [-78.76663322, 43.95901787], "type": "Point"}, "id": "16", "properties": {"Highway": 418, "Interchang": "Taunton418", "Latitude": 43.95901787, "Longitude": -78.76663322}, "type": "Feature"}, {"bbox": [-78.76394782, 43.91365529, -78.76394782, 43.91365529], "geometry": {"coordinates": [-78.76394782, 43.91365529], "type": "Point"}, "id": "17", "properties": {"Highway": 418, "Interchang": "Hwy2/418", "Latitude": 43.91365529, "Longitude": -78.76394782}, "type": "Feature"}, {"bbox": [-78.74583387, 43.88109405, -78.74583387, 43.88109405], "geometry": {"coordinates": [-78.74583387, 43.88109405], "type": "Point"}, "id": "18", "properties": {"Highway": 418, "Interchang": "Hwy401/418", "Latitude": 43.88109405, "Longitude": -78.74583387}, "type": "Feature"}], "type": "FeatureCollection"});
+        
+    
+    geo_json_6523d5878e714d30a7fa26b248b0be05.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Interchang"];
+    let aliases = ["Interchange"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            var layer_control_26beb7ba1c064b2b84f1e9a3d43d6bf2 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f99ae475d0c948189d982d741a83a0e2,
+                },
+                overlays :  {
+                    "Highway 407 East" : geo_json_f3f41878338c428986b984f24b61b906,
+                    "Interchanges" : geo_json_6523d5878e714d30a7fa26b248b0be05,
+                },
+            };
+            L.control.layers(
+                layer_control_26beb7ba1c064b2b84f1e9a3d43d6bf2.base_layers,
+                layer_control_26beb7ba1c064b2b84f1e9a3d43d6bf2.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_f6fbd5cd2e2e4f15a416ec481d337e71);
+        
+</script>
