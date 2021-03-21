@@ -15,4 +15,4 @@ Here is an example how to do it in MarkDown for user VuokkoH:
 Edit the text below and add links to the maps that you have created:
 
  
- - [My interactive map]()
+ - [My interactive map](https://github.com/da-rocket/Interactive_highways.git/interactive_highway.html)
